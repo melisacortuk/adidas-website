@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+body {
+  background-color: #161616;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 25px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.header:before {
+  content: "ADIDAS";
+  position: absolute;
+  top: 58%;
+  left: 57%;
+  color: rgba(180, 164, 164, 0.603);
+  font-size: 150px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  opacity: 0.1;
+  z-index: -1; /*Yazının arkaplanda kalmasını sağlıyor.*/
+}
+
+.header i {
+  color: #fff;
+  cursor: pointer; /*Üzerine gelindiğinde okun değil, el işaretinin çıkmasını sağlıyor.*/
+}
+
+.header p {
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-two {
+  height: 5px;
+}
+
+.line {
+  display: block;
+  width: 45px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 4px;
+  margin-right: 4px;
+}
+/*ROW SECTION*/
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /*Nesneler arasında eşit boşluklar bırakılır.*/
+  flex-wrap: wrap; /*Satıra sığamadığında yeni satıra geçmesini sağlar.*/
+}
+
+.col-2 {
+  flex-basis: 50%;
+  min-width: 300px;
+}
+
+.col-2 h1 {
+  color: #fff;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: 3px;
+  margin: 25px 0;
+}
+
+.col-2 p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 30px; /*Satır boşluğu*/
+}
+
+.col-2 .btn {
+  display: inline-block; /*a etiketi inline yapıda olduğu için margin veremiyorduk.*/
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 20px;
+  background-color: #E0484B;
+  border-radius: 35px;
+  margin-top: 45px;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 1s all ease;
+}
+
+.col-2 .btn:hover {
+  background-color: #7a191b;
+}
+
+/*RING SECTION*/
+.col-2 img{
+  width: 100%;
+  max-width: 580px;
+
+}
+
+#circle-ring {
+  padding-left: 130px;
+  padding-top: 60px;
+}
+
+.ring {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: trasparent;
+  border: 3px solid #3c3c3c;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.ring:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid trasparent;
+  border-top: 3px solid #fff12e;
+  border-right: 3px solid #fff12e;
+  border-radius: 50%;
+  z-index: -1;
+  /*animation-name: returnCircle;
+  animation-timing-function: 10s; (Animasyonun hızı)
+  animation-iteration-count: infinite; (Animasyonun tekrarlanma hızı)
+  animation-timing-count: linear; (Başlangıç ve bitişi aynı hızda bir geçiş efekti belirtir. */
+  animation: returnCircle 10s linear infinite;
+}
+
+.circle { /*merkeze bağlı yelkovan mantığı ile dönmesini sağlayan kodlar */
+  display: block; /*span satıriçi yani inline özellikli olduğundan block yapmamız gerekiyor.*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: transparent;
+  transform-origin: left;
+  z-index: -1;
+  animation: return 10s linear infinite;
+}
+
+.circle:before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: -9px;
+  width: 16px;
+  height: 16px;
+  background: #fff12e;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #fff12e;
+  z-index: -1;
+}
+
+.ring-two {
+  position: absolute;
+  top: 13%;
+  left: 56%;
+  width: 500px;
+  height: 500px;
+  background: transparent;
+  border: 3px solid #3c3c3c;
+  border-radius: 50%;
+}
+
+.ring-two:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid trasparent;
+  border-bottom: 3px solid #fff12e;
+  border-left: 3px solid #fff12e;
+  border-radius: 50%;
+  animation: returnCircle2 10s linear infinite;
+}
+
+.circle-two {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: transparent;
+  transform-origin: left;
+  animation: return2 10s linear infinite;
+}
+
+.circle-two:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 240px;
+  width: 16px;
+  height: 16px;
+  background: #fff12e;
+  box-shadow: 0 0 20px #fff12e;
+  border-radius: 50%;
+}
+
+@keyframes returnCircle {
+  0% {
+    transform: rotate(45deg); /*2 ve 3 boyutlu biçimlendirme yapmamızı sağlıyor. x ve y ekseninde 2 boyutlu döndürme yapmamızı sağlayacak. Rotate açı değeri alır. */
+     }
+100% {
+    transform: rotate(405deg);
+     }
+}
+
+@keyframes return {
+  0% {
+    transform: rotate(0deg); /*2 ve 3 boyutlu biçimlendirme yapmamızı sağlıyor. x ve y ekseninde 2 boyutlu döndürme yapmamızı sağlayacak. Rotate açı değeri alır. */
+     }
+100% {
+    transform: rotate(360deg);
+     }
+}
+
+@keyframes returnCircle2 {
+  0% {
+    transform: rotate(-45deg);
+  }
+ 100% {
+  transform: rotate(-405deg);
+}
+}
+
+@keyframes return2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
